@@ -1,113 +1,133 @@
-import Image from 'next/image'
+"use client";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entires) => {
+      entires.forEach((entire) => {
+        console.log(entire);
+
+        if (entire.isIntersecting) {
+          entire.target.classList.add("show-elements");
+        } else {
+          entire.target.classList.remove("show-elements");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden-elements");
+    hiddenElements.forEach((element) => observer.observe(element));
+  });
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <main className="p-5 text-center">
+      <div className="px-8">
+        <section className="scroll-animation">
+          <a href="#secret">
+            <h1 className="bg-red-500 inline-block text-gray-700 px-6 py-4 text-6xl rounded-lg cubano">
+              Shush... SECRET
+            </h1>
           </a>
+        </section>
+        <div className="md:px-10">
+          <section className="scroll-animation hidden-elements" id="secret">
+            <p className="text-4xl text-gray-300 px-4">
+              Most browsers <span className="text-red-500">don't care</span> of
+              you're privacy and sell it to advertisers to make money!
+            </p>
+            <p>
+              <a
+                href="#answer"
+                className="block mt-10 text-2xl no-underline animate-spin"
+              >
+                NOOOOO!
+              </a>
+            </p>
+          </section>
+          <section className="scroll-animation hidden-elements" id="answer">
+            <h1 className="bg-green-600 inline-block text-gray-700 px-6 py-4 text-6xl rounded-lg cubano">
+              SOLUTION
+            </h1>
+            <div className="mt-10">
+              <p className="text-4xl px-4">
+                Sloth browser has nothing to do with you're personal
+                information, thus{" "}
+                <span className="text-green-400">making it safe</span>. The
+                browser no way uses you're information in any manner.
+              </p>
+              <a
+                href="#how"
+                className="block animate-bounce mt-10 text-2xl no-underline"
+              >
+                But how?
+              </a>
+            </div>
+          </section>
+          <section className="scroll-animation hidden-elements" id="how">
+            <h1 className="bg-blue-500 inline-block text-gray-700 px-6 py-4 text-6xl rounded-lg cubano">
+              How
+            </h1>
+            <div className="mt-10">
+              <p className="text-4xl px-4">
+                The browser is{" "}
+                <span className="text-blue-500">incognito by default</span>,
+                thus making sure you're search history is not saved.
+              </p>
+              <p>
+                <a href="#why" className="block mt-10 text-2xl no-underline">
+                  Some reasons why
+                </a>
+              </p>
+            </div>
+          </section>
+          <section className="scroll-animation hidden-elements" id="why">
+            <h1 className="bg-yellow-500 inline-block text-gray-700 px-6 py-4 text-6xl rounded-lg cubano">
+              Reasons
+            </h1>
+            <div className="grid mt-[100px] gap-y-10">
+              <div className="hidden-elements reason grid grid-cols-2 gap-x-5">
+                <div className="text-2xl flex flex-col justify-center">
+                  <h2 className="text-5xl">Simple UI</h2>
+                  <p>
+                    Might be bad, but it's simple and not confusing. With this
+                    simple UI you can focus on what you're doing not what the
+                    browser want's you to do.
+                  </p>
+                </div>
+                <div>
+                  <img
+                    src="https://user-images.githubusercontent.com/104765117/255600277-cfb63d24-e0ae-4635-ba93-a915817a917b.png"
+                    alt="screenshot of the browser"
+                  />
+                </div>
+              </div>
+              <div className="hidden-elements reason grid grid-cols-2 gap-x-5">
+                <div>
+                  <img
+                    src="https://github.com/EzpieCo/ezpie/assets/104765117/a86b5559-7e39-4299-9b58-6165a9108135"
+                    alt="some features"
+                  />
+                </div>
+                <div className="text-2xl flex flex-col justify-center">
+                  <h2 className="text-5xl">Same old features</h2>
+                  <p>
+                    Those same boring old features you see in every browser, but
+                    with privacy in mind, we made sloth incognito by default,
+                    not saving you'r browsing history.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="scroll-animation hidden-elements">
+            <a href="/versions/v1-beta/sloth-installer.exe" download>
+              <h1 className="bg-gray-600 text-gray-700 text-6xl px-6 py-4 rounded-lg cubano hover:bg-gray-700 hover:text-gray-600 hover:scale-125 duration-500">
+                Download
+              </h1>
+            </a>
+          </section>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
