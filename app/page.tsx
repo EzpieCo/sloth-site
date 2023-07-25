@@ -117,6 +117,29 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              <div className="hidden-elements reason grid grid-cols-2 gap-x-5">
+                <div className="text-2xl flex flex-col justify-center">
+                  <h2 className="text-5xl">Trust</h2>
+                  <p>
+                    We hate hiding things. Our browser is made for you by you.
+                    The sloth browser is free as in freedom, thus{" "}
+                    <a
+                      href="https://github.com/ezpieCo/sloth-browser"
+                      className="text-blue-500 animate-pulse"
+                      target="_blank"
+                    >
+                      the code is available
+                    </a>{" "}
+                    for everyone
+                  </p>
+                </div>
+                <div>
+                  <img
+                    src="https://user-images.githubusercontent.com/104765117/255895175-dc8a3fb7-587a-45c8-8b88-fda49e87538b.png"
+                    alt="some features"
+                  />
+                </div>
+              </div>
             </div>
           </section>
           <section className="scroll-animation hidden-elements">
