@@ -32,8 +32,8 @@ export default function Home() {
         <div className="md:px-10">
           <section className="scroll-animation hidden-elements" id="secret">
             <p className="text-4xl text-gray-300 px-4">
-              Most browsers <span className="text-red-500">don't care</span> of
-              you're privacy and sell it to advertisers to make money!
+              Most browsers <span className="text-red-500">do not care</span> of
+              your privacy and sell it to advertisers to make money!
             </p>
             <p>
               <a
@@ -50,10 +50,9 @@ export default function Home() {
             </h1>
             <div className="mt-10">
               <p className="text-4xl px-4">
-                Sloth browser has nothing to do with you're personal
-                information, thus{" "}
-                <span className="text-green-400">making it safe</span>. The
-                browser no way uses you're information in any manner.
+                Sloth browser has nothing to do with your personal information,
+                thus <span className="text-green-400">making it safe</span>. The
+                browser no way uses your information in any manner.
               </p>
               <a
                 href="#how"
@@ -89,9 +88,9 @@ export default function Home() {
                 <div className="text-2xl flex flex-col justify-center">
                   <h2 className="text-5xl">Simple UI</h2>
                   <p>
-                    Might be bad, but it's simple and not confusing. With this
-                    simple UI you can focus on what you're doing not what the
-                    browser want's you to do.
+                    Might be bad, but it is simple and not confusing. With this
+                    simple UI you can focus on what you are doing not what the
+                    browser wants you to do.
                   </p>
                 </div>
                 <div>
@@ -113,7 +112,7 @@ export default function Home() {
                   <p>
                     Those same boring old features you see in every browser, but
                     with privacy in mind, we made sloth incognito by default,
-                    not saving you'r browsing history.
+                    not saving your browsing history.
                   </p>
                 </div>
               </div>
