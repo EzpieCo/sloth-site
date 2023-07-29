@@ -32,7 +32,7 @@ export default function NavBar() {
         <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0">
           <li>
             <a
-              href="#"
+              href="/"
               className="block py-2 pl-3 pr-4 rounded hover:text-blue-500 md:p-0"
               aria-current="page"
             >
@@ -49,10 +49,10 @@ export default function NavBar() {
           </li>
           <li>
             <a
-              href="#why"
+              href="/download"
               className="block py-2 pl-3 pr-4 rounded hover:text-blue-500 md:p-0"
             >
-              Why
+              Download
             </a>
           </li>
         </ul>

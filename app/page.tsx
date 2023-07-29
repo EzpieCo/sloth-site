@@ -142,7 +142,7 @@ export default function Home() {
             </div>
           </section>
           <section className="scroll-animation hidden-elements">
-            <a href="/versions/v1-beta/sloth-installer.exe" download>
+            <a href="/download">
               <h1 className="bg-gray-600 text-gray-700 text-6xl px-6 py-4 rounded-lg cubano hover:bg-gray-700 hover:text-gray-600 hover:scale-125 duration-500">
                 Download
               </h1>
